@@ -8,8 +8,12 @@
 </head>
 <body>
   <header>
+    <img src="myphoto.jpeg" alt="Ibsii's Photo" class="profile-pic">
     <h1>Hi, I'm Ibsii 👋</h1>
     <p>BSCS Student | Aspiring Software Developer | Graphic Designer</p>
+    <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
+    <br><br>
+    <a href="Ibtesam-Ul-Hassan-CV.pdf" download class="cv-button">Download My CV</a>
   </header>
 
   <section class="about">
@@ -32,7 +36,6 @@
       <li>C++, Python, HTML, CSS, SQL (Basic)</li>
       <li>WordPress, Canva, Adobe Photoshop</li>
       <li>MS Office, Git & GitHub (Basic)</li>
-      <li>MySQL (Beginner)</li>
       <li>AI Tools: Canva AI, ChatGPT, Wordtune</li>
     </ul>
   </section>
@@ -67,14 +70,29 @@
   </section>
 
   <section class="contact">
-    <h2>Contact</h2>
-    <p>Email: ibtesamulhassan170@gmail.com</p>
-    <p>Phone: 0311-9649170</p>
-    <p>GitHub: <a href="https://github.com/ibsii404" target="_blank">ibsii404</a></p>
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" name="user_name" placeholder="Your Name" required>
+      <input type="email" name="user_email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
     <p>© 2025 Ibsii. All rights reserved.</p>
   </footer>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    emailjs.init("YqhQLuZntwhWTymdv"); // Your Public Key
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      emailjs.sendForm('service_z1u9hfb', 'template_3kydbmb', this)
+        .then(() => { alert('Message Sent!'); }, (error) => { alert('Failed: ' + error); });
+    });
+  </script>
 </body>
 </html>
