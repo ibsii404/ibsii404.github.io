@@ -5,23 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ibsii's Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
   <header>
     <img src="myphoto.jpeg" alt="Ibsii's Photo" class="profile-pic">
-    <h1>Hi, I'm Ibsii 👋</h1>
+    <h1 id="typewriter"></h1>
     <p>BSCS Student | Aspiring Software Developer | Graphic Designer</p>
     <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
     <br><br>
     <a href="Ibtesam-Ul-Hassan-CV.pdf" download class="cv-button">Download My CV</a>
   </header>
 
-  <section class="about">
+  <section class="about"  data-aos="fade-up">
     <h2>About Me</h2>
     <p>I am a motivated Computer Science undergraduate from Multan, Pakistan, passionate about coding, teaching programming, graphic designing, and web development. I love creating user-friendly designs and solving real-world tech problems through code and creativity.</p>
   </section>
 
-  <section class="education">
+  <section class="education" data-aos="fade-up">
     <h2>Education</h2>
     <ul>
       <li><strong>BS Computer Science</strong> – MNS University of Agriculture, Multan (CGPA: 3.54)</li>
@@ -30,7 +31,7 @@
     </ul>
   </section>
 
-  <section class="skills">
+  <section class="skills"  data-aos="fade-up">
     <h2>Technical Skills</h2>
     <ul>
       <li>C++, Python, HTML, CSS, SQL (Basic)</li>
@@ -40,7 +41,7 @@
     </ul>
   </section>
 
-  <section class="projects">
+  <section class="projects"  data-aos="fade-up">
     <h2>Projects</h2>
     <ul>
       <li>Personal Portfolio Website (HTML, CSS, GitHub Pages)</li>
@@ -49,7 +50,7 @@
     </ul>
   </section>
 
-  <section class="experience">
+  <section class="experience"  data-aos="fade-up">
     <h2>Experience</h2>
     <h3>Computer Science & Programming Tutor</h3>
     <p>Taught Python and C++ to beginner and intermediate students with hands-on projects and real-world problem-solving sessions.</p>
@@ -58,7 +59,7 @@
     <p>Created banners, posters, and social media content for university events using Adobe Photoshop and Canva. Worked with team members to deliver creative designs that fit the event themes.</p>
   </section>
 
-  <section class="achievements">
+  <section class="achievements"  data-aos="fade-up">
     <h2>Achievements & Certifications</h2>
     <ul>
       <li>Participation in Inter-Departmental Declamation Competition</li>
@@ -69,7 +70,7 @@
     </ul>
   </section>
 
-  <section class="contact">
+  <section class="contact"  data-aos="fade-up">
     <h2>Contact Me</h2>
     <form id="contact-form">
       <input type="text" name="user_name" placeholder="Your Name" required>
@@ -82,6 +83,23 @@
   <footer>
     <p>© 2025 Ibsii. All rights reserved.</p>
   </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // smooth fade-in effect
+    });
+  </script>
+
+  <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <lottie-player 
+      src="https://assets5.lottiefiles.com/packages/lf20_4kx2q32n.json"  
+      background="transparent"  
+      speed="1"  
+      style="width: 200px; height: 200px;"  
+      loop  
+      autoplay>
+  </lottie-player> -->
+
 
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
