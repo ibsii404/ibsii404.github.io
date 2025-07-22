@@ -4,113 +4,330 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ibsii's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
-  <header>
-    <img src="myphoto.jpeg" alt="Ibsii's Photo" class="profile-pic">
-    <h1 id="typewriter"></h1>
-    <p>BSCS Student | Aspiring Software Developer | Graphic Designer</p>
-    <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
-    <br><br>
-    <a href="Ibtesam-Ul-Hassan-CV.pdf" download class="cv-button">Download My CV</a>
+  <div class="particles" id="particles-js"></div>
+  
+  <div class="scroll-indicator animate__animated animate__bounce animate__infinite">
+    <i class="fas fa-chevron-down"></i>
+  </div>
+
+  <header class="parallax">
+    <div class="header-content">
+      <div class="profile-container">
+        <!-- Decorative circles -->
+        <div class="profile-decoration decoration-1"></div>
+        <div class="profile-decoration decoration-2"></div>
+        <div class="profile-decoration decoration-3"></div>
+        
+        <!-- Profile image with border -->
+        <div class="profile-border animate__animated animate__pulse animate__infinite animate__slower">
+          <img src="myphoto.jpeg" alt="Ibsii's Photo" class="profile-pic">
+        </div>
+      </div>
+      <h1 id="typewriter"></h1>
+      <p class="subtitle">BSCS Student | Aspiring Software Developer | Graphic Designer</p>
+      <div class="header-buttons">
+        <button id="darkModeToggle" class="btn btn-effect">
+          <span class="btn-content">
+            <i class="fas fa-moon"></i> Toggle Dark Mode
+          </span>
+        </button>
+        <a href="Ibtesam-Ul-Hassan-CV.pdf" download class="btn btn-effect cv-button">
+          <span class="btn-content">
+            <i class="fas fa-download"></i> Download My CV
+          </span>
+        </a>
+      </div>
+    </div>
   </header>
 
-  <section class="about"  data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>I am a motivated Computer Science undergraduate from Multan, Pakistan, passionate about coding, teaching programming, graphic designing, and web development. I love creating user-friendly designs and solving real-world tech problems through code and creativity.</p>
-  </section>
-
-  <section class="education" data-aos="fade-up">
-    <h2>Education</h2>
+  <nav class="floating-nav">
     <ul>
-      <li><strong>BS Computer Science</strong> – MNS University of Agriculture, Multan (CGPA: 3.54)</li>
-      <li>Intermediate – Govt. College Civil Lines, Multan (Grade C)</li>
-      <li>Matriculation – The Learners Boys High School, Multan (Grade B)</li>
+      <li><a href="#about"><i class="fas fa-user"></i><span>About</span></a></li>
+      <li><a href="#skills"><i class="fas fa-code"></i><span>Skills</span></a></li>
+      <li><a href="#projects"><i class="fas fa-project-diagram"></i><span>Projects</span></a></li>
+      <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
     </ul>
-  </section>
+  </nav>
 
-  <section class="skills"  data-aos="fade-up">
-    <h2>Technical Skills</h2>
-    <ul>
-      <li>C++, Python, HTML, CSS, SQL (Basic)</li>
-      <li>WordPress, Canva, Adobe Photoshop</li>
-      <li>MS Office, Git & GitHub (Basic)</li>
-      <li>AI Tools: Canva AI, ChatGPT, Wordtune</li>
-    </ul>
-  </section>
+  <main>
+    <section id="about" class="about card" data-aos="fade-up">
+      <h2><i class="fas fa-user-tie icon"></i> About Me</h2>
+      <div class="content-wrapper">
+        <p>I am a motivated Computer Science undergraduate from Multan, Pakistan, passionate about coding, teaching programming, graphic designing, and web development. I love creating user-friendly designs and solving real-world tech problems through code and creativity.</p>
+        <div class="interests">
+          <div class="interest-item">
+            <i class="fas fa-laptop-code"></i>
+            <span>Coding</span>
+          </div>
+          <div class="interest-item">
+            <i class="fas fa-paint-brush"></i>
+            <span>Design</span>
+          </div>
+          <div class="interest-item">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <span>Teaching</span>
+          </div>
+          <div class="interest-item">
+            <i class="fas fa-lightbulb"></i>
+            <span>Problem Solving</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="projects"  data-aos="fade-up">
-    <h2>Projects</h2>
-    <ul>
-      <li>Personal Portfolio Website (HTML, CSS, GitHub Pages)</li>
-      <li>Snake Game (C++)</li>
-      <li>Database Management System (MySQL)</li>
-    </ul>
-  </section>
+    <section id="education" class="education card" data-aos="fade-up">
+      <h2><i class="fas fa-graduation-cap icon"></i> Education</h2>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-content">
+            <h3>BS Computer Science</h3>
+            <p>MNS University of Agriculture, Multan</p>
+            <p class="timeline-date">2021 - Present | CGPA: 3.54</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+          <div class="timeline-content">
+            <h3>Intermediate</h3>
+            <p>Govt. College Civil Lines, Multan</p>
+            <p class="timeline-date">2019 - 2021 | Grade C</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+          <div class="timeline-content">
+            <h3>Matriculation</h3>
+            <p>The Learners Boys High School, Multan</p>
+            <p class="timeline-date">2017 - 2019 | Grade B</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="experience"  data-aos="fade-up">
-    <h2>Experience</h2>
-    <h3>Computer Science & Programming Tutor</h3>
-    <p>Taught Python and C++ to beginner and intermediate students with hands-on projects and real-world problem-solving sessions.</p>
+    <section id="skills" class="skills card" data-aos="fade-up">
+      <h2><i class="fas fa-cogs icon"></i> Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-category" data-aos="zoom-in">
+          <h3>Programming</h3>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="85%">C++</div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="80%">Python</div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="75%">HTML/CSS</div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="60%">SQL</div>
+          </div>
+        </div>
+        
+        <div class="skill-category" data-aos="zoom-in" data-aos-delay="100">
+          <h3>Design Tools</h3>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="90%">Canva</div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="75%">Adobe Photoshop</div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="80%">WordPress</div>
+          </div>
+        </div>
+        
+        <div class="skill-category" data-aos="zoom-in" data-aos-delay="200">
+          <h3>Other Skills</h3>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="85%">MS Office</div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="65%">Git & GitHub</div>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-progress" data-width="75%">AI Tools</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <h3>Graphic Designer – MNSUAM University Society</h3>
-    <p>Created banners, posters, and social media content for university events using Adobe Photoshop and Canva. Worked with team members to deliver creative designs that fit the event themes.</p>
-  </section>
+    <section id="projects" class="projects card" data-aos="fade-up">
+      <h2><i class="fas fa-project-diagram icon"></i> Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card" data-aos="flip-left">
+          <div class="project-img">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Personal Portfolio Website</h3>
+          <p>Created using HTML, CSS, and hosted on GitHub Pages</p>
+          <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+        </div>
+        
+        <div class="project-card" data-aos="flip-left" data-aos-delay="100">
+          <div class="project-img">
+            <i class="fas fa-gamepad"></i>
+          </div>
+          <h3>Snake Game</h3>
+          <p>Classic snake game implemented in C++</p>
+          <div class="project-tech">
+            <span>C++</span>
+            <span>OOP</span>
+          </div>
+        </div>
+        
+        <div class="project-card" data-aos="flip-left" data-aos-delay="200">
+          <div class="project-img">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3>Database Management System</h3>
+          <p>MySQL database system for managing data</p>
+          <div class="project-tech">
+            <span>MySQL</span>
+            <span>Database</span>
+          </div>
+        </div>
 
-  <section class="achievements"  data-aos="fade-up">
-    <h2>Achievements & Certifications</h2>
-    <ul>
-      <li>Participation in Inter-Departmental Declamation Competition</li>
-      <li>Organizer – Debate Club Event</li>
-      <li>District-Level Football Tournament (District Sports Department)</li>
-      <li>Intro to Python Programming – Coursera (In Progress)</li>
-      <li>Git & GitHub – Udemy (In Progress)</li>
-    </ul>
-  </section>
+        <!-- New WordPress Shopping Platform Project -->
+        <div class="project-card" data-aos="flip-left" data-aos-delay="300">
+          <div class="project-img" style="background: linear-gradient(135deg, #21759b, #8c5e9b);">
+            <i class="fab fa-wordpress"></i>
+          </div>
+          <h3>E-Commerce Platform</h3>
+          <p>Full-featured online store built with WordPress and WooCommerce</p>
+          <div class="project-tech">
+            <span>WordPress</span>
+            <span>WooCommerce</span>
+            <span>PHP</span>
+            <span>CSS</span>
+          </div>
+          <div class="project-features">
+            <span><i class="fas fa-check-circle"></i> Product Catalog</span>
+            <span><i class="fas fa-check-circle"></i> Shopping Cart</span>
+            <span><i class="fas fa-check-circle"></i> Payment Gateway</span>
+          </div>
+          <a href="#" class="project-link" target="_blank">
+            <i class="fas fa-external-link-alt"></i> View Live Demo
+          </a>
+        </div>
+      </div>
+    </section>
 
-  <section class="contact"  data-aos="fade-up">
-    <h2>Contact Me</h2>
-    <form id="contact-form">
-      <input type="text" name="user_name" placeholder="Your Name" required>
-      <input type="email" name="user_email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <section id="experience" class="experience card" data-aos="fade-up">
+      <h2><i class="fas fa-briefcase icon"></i> Experience</h2>
+      <div class="exp-timeline">
+        <div class="exp-item" data-aos="fade-right">
+          <div class="exp-date">2023 - Present</div>
+          <div class="exp-content">
+            <h3>Computer Science & Programming Tutor</h3>
+            <p>Taught Python and C++ to beginner and intermediate students with hands-on projects and real-world problem-solving sessions.</p>
+          </div>
+        </div>
+        <div class="exp-item" data-aos="fade-right" data-aos-delay="100">
+          <div class="exp-date">2022 - 2023</div>
+          <div class="exp-content">
+            <h3>Graphic Designer – MNSUAM University Society</h3>
+            <p>Created banners, posters, and social media content for university events using Adobe Photoshop and Canva.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="achievements card" data-aos="fade-up">
+      <h2><i class="fas fa-trophy icon"></i> Achievements & Certifications</h2>
+      <div class="achievements-grid">
+        <div class="achievement-card" data-aos="zoom-in">
+          <i class="fas fa-microphone-alt"></i>
+          <h3>Inter-Departmental Declamation Competition</h3>
+          <p>Active participation in university-level competition</p>
+        </div>
+        <div class="achievement-card" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fas fa-users"></i>
+          <h3>Organizer – Debate Club Event</h3>
+          <p>Successfully organized university debate event</p>
+        </div>
+        <div class="achievement-card" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fas fa-futbol"></i>
+          <h3>District-Level Football Tournament</h3>
+          <p>Participated in sports competition</p>
+        </div>
+      </div>
+      <div class="certifications">
+        <h3>Ongoing Certifications:</h3>
+        <ul>
+          <li><i class="fas fa-spinner fa-spin"></i> Intro to Python Programming – Coursera</li>
+          <li><i class="fas fa-spinner fa-spin"></i> Git & GitHub – Udemy</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="contact card" data-aos="fade-up">
+      <h2><i class="fas fa-envelope icon"></i> Contact Me</h2>
+      <div class="contact-container">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>ibtesamulhassan170@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+92 3119649170</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Multan, Pakistan</span>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/ibsii404" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/ibtesam-ul-hassan-8ba25b329" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <form id="contact-form" data-aos="fade-left">
+          <div class="form-group">
+            <input type="text" name="user_name" placeholder="Your Name" required>
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="form-group">
+            <input type="email" name="user_email" placeholder="Your Email" required>
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <i class="fas fa-comment"></i>
+          </div>
+          <button type="submit" class="btn btn-effect submit-btn">
+            <span class="btn-content">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Ibsii. All rights reserved.</p>
+    <div class="footer-content">
+      <p>© 2025 Ibsii. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#top">Back to Top</a>
+      </div>
+    </div>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800, // smooth fade-in effect
-    });
-  </script>
-
-  <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  <lottie-player 
-      src="https://assets5.lottiefiles.com/packages/lf20_4kx2q32n.json"  
-      background="transparent"  
-      speed="1"  
-      style="width: 200px; height: 200px;"  
-      loop  
-      autoplay>
-  </lottie-player> -->
-
-
-  <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-  <script>
-    emailjs.init("YqhQLuZntwhWTymdv"); // Your Public Key
-
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      emailjs.sendForm('service_z1u9hfb', 'template_3kydbmb', this)
-        .then(() => { alert('Message Sent!'); }, (error) => { alert('Failed: ' + error); });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
