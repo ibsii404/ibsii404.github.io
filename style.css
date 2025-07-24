@@ -643,11 +643,18 @@ h2::after {
 }
 
 /* Project Link Styles */
+/* Add this to your existing CSS */
+.project-links {
+  display: flex;
+  gap: 0.8rem;
+  margin: 0 1.5rem 1.5rem;
+  flex-wrap: wrap;
+}
+
 .project-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  margin: 0 1.5rem 1.5rem;
   padding: 0.5rem 1rem;
   background: rgba(76, 175, 80, 0.1);
   color: var(--primary-color);
@@ -658,12 +665,18 @@ h2::after {
 }
 
 .project-link:hover {
-  background: rgba(76, 175, 80, 0.2);
-  transform: translateX(5px);
+  background: rgba(76, 175, 80, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
 .project-link i {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+}
+
+/* Python-specific icon color */
+.fa-python {
+  color: #ffd43b; /* Python yellow */
 }
 
 /* Experience Section */
