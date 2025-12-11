@@ -276,4 +276,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     skillsObserver.observe(skillsSection);
   }
+  // Initialize 3D Tilt for cards
+  VanillaTilt.init(document.querySelectorAll(".project-card, .skill-category, .achievement-card"), {
+      max: 10,              // Maximum tilt rotation (degrees)
+      speed: 400,           // Speed of the tilt
+      glare: true,          // Add a shiny glare effect
+      "max-glare": 0.2,     // Opacity of glare
+  });
 });

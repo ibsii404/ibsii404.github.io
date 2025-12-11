@@ -1,18 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* style.css - Replace the top section */
 :root {
-  --primary-color: #4CAF50;
-  --secondary-color: #2E7D32;
-  --accent-color: #8BC34A;
-  --text-color: #333;
-  --light-text: #f5f5f5;
-  --bg-color: #f9f9f9;
-  --card-bg: rgba(255, 255, 255, 0.85);
-  --dark-bg: #121212;
-  --dark-card: rgba(30, 30, 30, 0.8);
-  --dark-text: #e0e0e0;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
+  /* Modern Palette: Deep Slate & Neon Violet */
+  --bg-color: #0f172a;       /* Deep Slate Blue (Dark Mode default) */
+  --card-bg: rgba(255, 255, 255, 0.03); /* Translucent glass */
+  --primary-color: #8b5cf6;  /* Violet */
+  --secondary-color: #3b82f6; /* Bright Blue */
+  --accent-color: #f43f5e;    /* Rose (for pop) */
+  --text-color: #e2e8f0;      /* Soft White */
+  --muted-text: #94a3b8;      /* Grey for subtitles */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Deep glass shadow */
+  --gradient: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+  --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy smooth */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.7;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%);
+  background-attachment: fixed;
 }
 
 * {
@@ -24,15 +37,6 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-  overflow-x: hidden;
-  transition: var(--transition);
 }
 
 .dark-mode {
@@ -53,23 +57,13 @@ body {
 header {
   position: relative;
   text-align: center;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
-  padding: 5rem 2rem;
+  background: transparent; 
+  padding: 8rem 2rem 4rem;
   overflow: hidden;
   z-index: 1;
 }
 
-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
-  z-index: -1;
-}
 
 .header-content {
   max-width: 1200px;
@@ -86,21 +80,19 @@ header::before {
 }
 
 .profile-border {
-  width: 250px; /* Increased from 180px */
-  height: 250px; /* Increased from 180px */
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(45deg, 
-    var(--primary-color), 
-    var(--accent-color),
-    #8e44ad); /* Added purple for more colorful gradient */
-  padding: 8px; /* Increased from 5px */
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
-  animation: pulse 2s infinite, rotateBorder 20s linear infinite;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: transparent;
+  padding: 5px;
+  /* Glowing gradient ring */
+  box-shadow: 0 0 60px rgba(139, 92, 246, 0.3);
   position: relative;
-  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+  border: 2px solid rgba(255,255,255,0.1);
 }
 
 .profile-border::before {
@@ -123,10 +115,11 @@ header::before {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid white; /* Thicker border */
+  border: none;
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.5s ease, filter 0.5s ease;
 }
+
 
 .profile-pic:hover {
   transform: scale(1.05);
@@ -197,10 +190,14 @@ header::before {
 }
 
 h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Makes text take the gradient color */
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
 }
 
 .subtitle {
@@ -238,7 +235,9 @@ h1 {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: var(--primary-color);
+  background: rgba(15, 23, 42, 0.8); /* Dark glass */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
   color: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: var(--transition);
@@ -248,7 +247,7 @@ h1 {
 
 .floating-nav a:hover {
   transform: translateY(-5px);
-  background: var(--secondary-color);
+  background: var(--primary-color);
 }
 
 .floating-nav a span {
@@ -273,30 +272,37 @@ h1 {
 }
 
 /* Section Styles */
+/* Replace existing .card style */
 .card {
   max-width: 1200px;
   margin: 2rem auto;
-  padding: 2.5rem;
+  padding: 3rem;
   background: var(--card-bg);
-  border-radius: 15px;
+  backdrop-filter: blur(16px); /* The "Frosted" effect */
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: var(--glass-border);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
   transition: var(--transition);
   position: relative;
   overflow: hidden;
 }
 
+/* Remove the old side border, add a glow instead */
 .card::before {
-  content: '';
-  position: absolute;
+  background: var(--gradient);
+  height: 3px;
+  width: 100%;
   top: 0;
   left: 0;
-  width: 5px;
-  height: 100%;
-  background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
-  transition: var(--transition);
+  opacity: 0.5;
 }
 
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
 .card:hover::before {
   width: 100%;
   opacity: 0.1;
@@ -908,14 +914,16 @@ input:focus, textarea:focus {
 }
 
 .btn-effect {
-  background: var(--primary-color);
+  background: var(--gradient);
   color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
 }
 
 .btn-effect:hover {
-  background: var(--secondary-color);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6);
 }
 
 .btn-effect:active {
